@@ -238,18 +238,6 @@ export class SchedulerCardEditor extends LitElement {
             </ha-formfield>
 
             <ha-formfield
-              label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.time', this.hass)}"
-            >
-              <ha-checkbox
-                value="time"
-                @change=${this._setDisplayOptionsSecondary}
-                ?checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('time')}
-              >
-              </ha-checkbox>
-            </ha-formfield>
-          </div>
-          <div class="column">
-            <ha-formfield
               label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.days', this.hass)}"
             >
               <ha-checkbox
@@ -270,6 +258,29 @@ export class SchedulerCardEditor extends LitElement {
               >
               </ha-checkbox>
             </ha-formfield>
+          </div>
+          <div class="column">
+            <ha-formfield
+              label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.time_until_next_or_idle', this.hass)}"
+            >
+              <ha-checkbox
+                value="time-until-next-or-idle"
+                @change=${this._setDisplayOptionsSecondary}
+                ?checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('time-until-next-or-idle')}
+              >
+              </ha-checkbox>
+            </ha-formfield>
+
+            <ha-formfield
+              label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.time', this.hass)}"
+            >
+              <ha-checkbox
+                value="time"
+                @change=${this._setDisplayOptionsSecondary}
+                ?checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('time')}
+              >
+              </ha-checkbox>
+            </ha-formfield>
 
             <ha-formfield
               label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.status', this.hass)}"
@@ -278,17 +289,6 @@ export class SchedulerCardEditor extends LitElement {
                 value="status"
                 @change=${this._setDisplayOptionsSecondary}
                 ?checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('status')}
-              >
-              </ha-checkbox>
-            </ha-formfield>
-
-            <ha-formfield
-              label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.time_until_next_or_idle', this.hass)}"
-            >
-              <ha-checkbox
-                value="time-until-next-or-idle"
-                @change=${this._setDisplayOptionsSecondary}
-                ?checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('time-until-next-or-idle')}
               >
               </ha-checkbox>
             </ha-formfield>
@@ -385,11 +385,11 @@ export class SchedulerCardEditor extends LitElement {
     secondaryInfo.sort((a, b) => {
       const ranking = {
         'relative-time': 1,
+        'time-until-next-or-idle': 1.5,
         time: secondaryInfo.includes('relative-time') ? 3 : 2,
         days: secondaryInfo.includes('relative-time') ? 2 : 3,
         'additional-tasks': 4,
-        status: 4,
-        'time-until-next-or-idle': 4,
+        status: 5,
       };
       const rankA = Object.keys(ranking).includes(a) ? ranking[a] : 5;
       const rankB = Object.keys(ranking).includes(b) ? ranking[b] : 5;
