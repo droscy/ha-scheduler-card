@@ -105,6 +105,8 @@ export enum DisplayItem {
   Entity = 'entity',
   Action = 'action',
   Tags = 'tags',
+  Status = 'status',
+  TimeUntilNextOrIdle = 'time-until-next-or-idle',
   Default = 'default',
 }
 

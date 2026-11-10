@@ -270,6 +270,28 @@ export class SchedulerCardEditor extends LitElement {
               >
               </ha-checkbox>
             </ha-formfield>
+
+            <ha-formfield
+              label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.status', this.hass)}"
+            >
+              <ha-checkbox
+                value="status"
+                @change=${this._setDisplayOptionsSecondary}
+                ?checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('status')}
+              >
+              </ha-checkbox>
+            </ha-formfield>
+
+            <ha-formfield
+              label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.time_until_next_or_idle', this.hass)}"
+            >
+              <ha-checkbox
+                value="time-until-next-or-idle"
+                @change=${this._setDisplayOptionsSecondary}
+                ?checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('time-until-next-or-idle')}
+              >
+              </ha-checkbox>
+            </ha-formfield>
           </div>
         </div>
 
@@ -366,6 +388,8 @@ export class SchedulerCardEditor extends LitElement {
         time: secondaryInfo.includes('relative-time') ? 3 : 2,
         days: secondaryInfo.includes('relative-time') ? 2 : 3,
         'additional-tasks': 4,
+        status: 4,
+        'time-until-next-or-idle': 4,
       };
       const rankA = Object.keys(ranking).includes(a) ? ranking[a] : 5;
       const rankB = Object.keys(ranking).includes(b) ? ranking[b] : 5;

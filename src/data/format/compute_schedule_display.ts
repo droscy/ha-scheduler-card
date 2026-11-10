@@ -7,6 +7,10 @@ import { localize } from '../../localize/localize';
 import { capitalizeFirstLetter } from '../../lib/capitalize_first_letter';
 import { formatWeekdayDisplay } from '../days';
 import { computeEntityDisplay } from './compute_entity_display';
+import { evaluateConditions } from '../conditions/evaluate_conditions';
+
+const isNextSlotActive = (schedule: Schedule, hass: HomeAssistant) =>
+  evaluateConditions(schedule.entries[0].slots[schedule.next_entries[0] || 0].conditions, hass);
 
 export const computeScheduleDisplay = (
   schedule: Schedule,
@@ -41,6 +45,23 @@ export const computeScheduleDisplay = (
         const entityDisplay = entityIds.map((e) => computeEntityDisplay(e, hass, customize)).join(', ');
         return capitalizeFirstLetter(entityDisplay);
       case DisplayItem.RelativeTime:
+        return '<relative-time></relative-time>';
+      case DisplayItem.Status: {
+        if (['off', 'completed'].includes(hass.states[schedule.entity_id!]?.state)) {
+          return localize('ui.panel.overview.status.disabled', hass);
+        }
+        return localize(
+          isNextSlotActive(schedule, hass) ? 'ui.panel.overview.status.active' : 'ui.panel.overview.status.idle',
+          hass
+        );
+      }
+      case DisplayItem.TimeUntilNextOrIdle:
+        if (
+          !['off', 'completed'].includes(hass.states[schedule.entity_id!]?.state) &&
+          !isNextSlotActive(schedule, hass)
+        ) {
+          return localize('ui.panel.overview.status.idle', hass);
+        }
         return '<relative-time></relative-time>';
       case DisplayItem.Tags:
         return schedule.tags?.map((e) => `<tag>${e}</tag>`).join('');
