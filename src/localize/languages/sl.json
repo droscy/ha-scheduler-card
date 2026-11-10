@@ -233,7 +233,7 @@
               "days": "Katere dni/kdaj se sproži akcija",
               "additional_tasks": "Število dodatnih opravil",
               "status": "Stanje (aktivno ali mirovanje)",
-              "time_until_next_or_idle": "Preostali čas do naslednjega dejanja ali stanje mirovanja"
+              "relative_time_or_idle": "...ali stanje mirovanja"
             }
           },
           "show_header_toggle": {

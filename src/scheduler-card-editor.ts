@@ -51,6 +51,9 @@ export class SchedulerCardEditor extends LitElement {
   }
 
   render() {
+    const hasRelativeTime = [this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY]
+      .flat()
+      .some((e) => ['relative-time', 'relative-time-or-idle'].includes(e));
     const timeStepSelector = <NumberSelector>{
       number: {
         min: 0,
@@ -232,7 +235,7 @@ export class SchedulerCardEditor extends LitElement {
               <ha-checkbox
                 value="relative-time"
                 @change=${this._setDisplayOptionsSecondary}
-                ?checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('relative-time')}
+                .checked=${hasRelativeTime}
               >
               </ha-checkbox>
             </ha-formfield>
@@ -261,12 +264,13 @@ export class SchedulerCardEditor extends LitElement {
           </div>
           <div class="column">
             <ha-formfield
-              label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.time_until_next_or_idle', this.hass)}"
+              label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.relative_time_or_idle', this.hass)}"
             >
               <ha-checkbox
-                value="time-until-next-or-idle"
+                value="relative-time-or-idle"
                 @change=${this._setDisplayOptionsSecondary}
-                ?checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('time-until-next-or-idle')}
+                .disabled=${!hasRelativeTime}
+                .checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('relative-time-or-idle')}
               >
               </ha-checkbox>
             </ha-formfield>
@@ -381,13 +385,23 @@ export class SchedulerCardEditor extends LitElement {
     const checked = (ev.target as HTMLInputElement).checked;
     let displayOptions = { ...this._config?.display_options };
     let secondaryInfo = [displayOptions.secondary_info || []].flat();
-    secondaryInfo = checked ? Array.from(new Set([...secondaryInfo, value])) : secondaryInfo.filter((e) => e !== value);
+    if (['relative-time', 'relative-time-or-idle'].includes(value)) {
+      // the two variants are mutually exclusive: the "or idle" option refines the relative time
+      secondaryInfo = secondaryInfo.filter((e) => !['relative-time', 'relative-time-or-idle'].includes(e));
+      if (value === 'relative-time-or-idle') secondaryInfo.push(checked ? value : 'relative-time');
+      else if (checked) secondaryInfo.push(value);
+    } else {
+      secondaryInfo = checked
+        ? Array.from(new Set([...secondaryInfo, value]))
+        : secondaryInfo.filter((e) => e !== value);
+    }
+    const hasRelativeTime = secondaryInfo.some((e) => ['relative-time', 'relative-time-or-idle'].includes(e));
     secondaryInfo.sort((a, b) => {
       const ranking = {
         'relative-time': 1,
-        'time-until-next-or-idle': 1.5,
-        time: secondaryInfo.includes('relative-time') ? 3 : 2,
-        days: secondaryInfo.includes('relative-time') ? 2 : 3,
+        'relative-time-or-idle': 1,
+        time: hasRelativeTime ? 3 : 2,
+        days: hasRelativeTime ? 2 : 3,
         'additional-tasks': 4,
         status: 5,
       };

@@ -233,7 +233,7 @@
               "days": "ימים חוזרים בשבוע",
               "additional_tasks": "מספר משימות נוספות",
               "status": "מצב (פעיל או לא פעיל)",
-              "time_until_next_or_idle": "הזמן שנותר עד הפעולה הבאה או מצב לא פעיל"
+              "relative_time_or_idle": "...או מצב לא פעיל"
             }
           },
           "show_header_toggle": {

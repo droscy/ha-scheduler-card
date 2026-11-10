@@ -55,7 +55,7 @@ export const computeScheduleDisplay = (
           hass
         );
       }
-      case DisplayItem.TimeUntilNextOrIdle:
+      case DisplayItem.RelativeTimeOrIdle:
         if (
           !['off', 'completed'].includes(hass.states[schedule.entity_id!]?.state) &&
           !isNextSlotActive(schedule, hass)

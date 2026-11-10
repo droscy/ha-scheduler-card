@@ -233,7 +233,7 @@
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
               "status": "Status (aktiv eller inaktiv)",
-              "time_until_next_or_idle": "Gjenstående tid til neste handling eller inaktiv tilstand"
+              "relative_time_or_idle": "...eller inaktiv tilstand"
             }
           },
           "show_header_toggle": {

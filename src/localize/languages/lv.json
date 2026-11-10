@@ -233,7 +233,7 @@
               "days": "Atkārtotas nedēļas dienas",
               "additional_tasks": "Papildu uzdevumu skaits",
               "status": "Statuss (aktīvs vai dīkstāvē)",
-              "time_until_next_or_idle": "Atlikušais laiks līdz nākamajai darbībai vai dīkstāves stāvoklis"
+              "relative_time_or_idle": "...vai dīkstāves stāvoklis"
             }
           },
           "show_header_toggle": {

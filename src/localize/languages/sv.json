@@ -233,7 +233,7 @@
               "days": "Upprepade dagar i veckan",
               "additional_tasks": "Antal ytterligare uppgifter",
               "status": "Status (aktiv eller inaktiv)",
-              "time_until_next_or_idle": "Återstående tid till nästa åtgärd eller inaktivt tillstånd"
+              "relative_time_or_idle": "...eller inaktivt tillstånd"
             }
           },
           "show_header_toggle": {

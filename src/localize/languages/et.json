@@ -233,7 +233,7 @@
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
               "status": "Olek (aktiivne või ootel)",
-              "time_until_next_or_idle": "Aega järgmise toiminguni või ooteolek"
+              "relative_time_or_idle": "...või ooteolek"
             }
           },
           "show_header_toggle": {

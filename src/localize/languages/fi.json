@@ -233,7 +233,7 @@
               "days": "Toistuvat viikonpäivät",
               "additional_tasks": "Lisätoimintojen määrä",
               "status": "Tila (aktiivinen tai lepotilassa)",
-              "time_until_next_or_idle": "Aikaa seuraavaan toimintoon tai lepotila"
+              "relative_time_or_idle": "...tai lepotila"
             }
           },
           "show_header_toggle": {

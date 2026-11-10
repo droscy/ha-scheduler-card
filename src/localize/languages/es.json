@@ -233,7 +233,7 @@
               "days": "Días repetidos de la semana",
               "additional_tasks": "Número de tareas adicionales",
               "status": "Estado (activo o inactivo)",
-              "time_until_next_or_idle": "Tiempo restante hasta la siguiente acción o estado inactivo"
+              "relative_time_or_idle": "...o estado inactivo"
             }
           },
           "show_header_toggle": {

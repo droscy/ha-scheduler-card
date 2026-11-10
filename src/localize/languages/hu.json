@@ -233,7 +233,7 @@
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
               "status": "Állapot (aktív vagy tétlen)",
-              "time_until_next_or_idle": "A következő műveletig hátralévő idő vagy tétlen állapot"
+              "relative_time_or_idle": "...vagy tétlen állapot"
             }
           },
           "show_header_toggle": {

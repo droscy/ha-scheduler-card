@@ -233,7 +233,7 @@
               "days": "Powtarzane dni tygodnia",
               "additional_tasks": "Liczba dodatkowych zadań",
               "status": "Status (aktywny lub bezczynny)",
-              "time_until_next_or_idle": "Czas pozostały do następnej akcji lub stan bezczynności"
+              "relative_time_or_idle": "...lub stan bezczynności"
             }
           },
           "show_header_toggle": {

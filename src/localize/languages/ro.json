@@ -233,7 +233,7 @@
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
               "status": "Stare (activ sau inactiv)",
-              "time_until_next_or_idle": "Timp rămas până la următoarea acțiune sau stare inactivă"
+              "relative_time_or_idle": "...sau stare inactivă"
             }
           },
           "show_header_toggle": {

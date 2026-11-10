@@ -233,7 +233,7 @@
               "days": "ہفتے کے دہرائے گئے دن",
               "additional_tasks": "اضافی کاموں کی تعداد",
               "status": "حالت (فعال یا غیر فعال)",
-              "time_until_next_or_idle": "اگلی کارروائی تک باقی وقت یا غیر فعال حالت"
+              "relative_time_or_idle": "...یا غیر فعال حالت"
             }
           },
           "show_header_toggle": {

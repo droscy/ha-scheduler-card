@@ -132,7 +132,7 @@ export class SchedulerCard extends LitElement {
         this._config?.display_options?.secondary_info || [],
       ]
         .flat(2)
-        .some((e) => ['status', 'time-until-next-or-idle'].includes(String(e)));
+        .some((e) => ['status', 'relative-time-or-idle'].includes(String(e)));
       return Object.values(this.schedules).some((e) => {
         if (JSON.stringify(oldHass.states[e.entity_id!]) !== JSON.stringify(this.hass!.states[e.entity_id!]))
           return true;

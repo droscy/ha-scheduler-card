@@ -233,7 +233,7 @@
               "days": "Dies repetits de la setmana",
               "additional_tasks": "Nombre de tasques addicionals",
               "status": "Estat (actiu o inactiu)",
-              "time_until_next_or_idle": "Temps restant fins a la propera acció o estat inactiu"
+              "relative_time_or_idle": "...o estat inactiu"
             }
           },
           "show_header_toggle": {

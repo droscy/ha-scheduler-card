@@ -233,7 +233,7 @@
               "days": "重复周期（星期）",
               "additional_tasks": "额外任务数量",
               "status": "状态(活动或空闲)",
-              "time_until_next_or_idle": "距离下一次操作的剩余时间或空闲状态"
+              "relative_time_or_idle": "...或空闲状态"
             }
           },
           "show_header_toggle": {

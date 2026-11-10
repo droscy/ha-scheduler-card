@@ -233,7 +233,7 @@
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
               "status": "Status (active or idle)",
-              "time_until_next_or_idle": "Time remaining until next action or idle state"
+              "relative_time_or_idle": "...or idle status"
             }
           },
           "show_header_toggle": {

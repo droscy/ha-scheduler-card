@@ -233,7 +233,7 @@
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
               "status": "Статус (активно або неактивно)",
-              "time_until_next_or_idle": "Час до наступної дії або стан очікування"
+              "relative_time_or_idle": "...або стан очікування"
             }
           },
           "show_header_toggle": {
