@@ -4,6 +4,7 @@ import { DialogSelectEntitiesParams } from './dialogs/dialog-select-entities';
 import { HomeAssistant } from './lib/types';
 import { localize } from './localize/localize';
 import { CardConfig, EditorMode } from './types';
+import { keyed } from 'lit/directives/keyed';
 import { fireEvent } from './lib/fire_event';
 import { NumberSelector, SelectSelector } from './lib/selector';
 import { fetchTags } from './data/store/fetch_tags';
@@ -263,17 +264,22 @@ export class SchedulerCardEditor extends LitElement {
             </ha-formfield>
           </div>
           <div class="column">
-            <ha-formfield
-              label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.relative_time_or_idle', this.hass)}"
-            >
-              <ha-checkbox
-                value="relative-time-or-idle"
-                @change=${this._setDisplayOptionsSecondary}
-                .disabled=${!hasRelativeTime}
-                .checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('relative-time-or-idle')}
-              >
-              </ha-checkbox>
-            </ha-formfield>
+            ${keyed(
+              hasRelativeTime,
+              html`
+                <ha-formfield
+                  label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.relative_time_or_idle', this.hass)}"
+                >
+                  <ha-checkbox
+                    value="relative-time-or-idle"
+                    @change=${this._setDisplayOptionsSecondary}
+                    .disabled=${!hasRelativeTime}
+                    .checked=${[this._config.display_options?.secondary_info || DEFAULT_SECONDARY_INFO_DISPLAY].flat().includes('relative-time-or-idle')}
+                  >
+                  </ha-checkbox>
+                </ha-formfield>
+              `
+            )}
 
             <ha-formfield
               label="${localize('ui.panel.card_editor.fields.display_format_secondary.options.time', this.hass)}"
