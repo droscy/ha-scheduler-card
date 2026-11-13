@@ -56,13 +56,9 @@ export const computeScheduleDisplay = (
         );
       }
       case DisplayItem.RelativeTimeOrIdle:
-        if (
-          !['off', 'completed'].includes(hass.states[schedule.entity_id!]?.state) &&
-          !isNextSlotActive(schedule, hass)
-        ) {
-          return localize('ui.panel.overview.status.idle', hass);
-        }
-        return '<relative-time></relative-time>';
+        return isNextSlotActive(schedule, hass)
+          ? '<relative-time></relative-time>'
+          : localize('ui.panel.overview.status.idle', hass);
       case DisplayItem.Tags:
         return schedule.tags?.map((e) => `<tag>${e}</tag>`).join('');
       case DisplayItem.Time:
