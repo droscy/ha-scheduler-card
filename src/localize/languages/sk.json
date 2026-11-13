@@ -232,7 +232,7 @@
               "time": "Nastavený čas pre ďalšiu akciu",
               "days": "Opakované dni v týždni",
               "additional_tasks": "Počet dodatočných úloh",
-              "status": "Stav (aktívny alebo nečinný)",
+              "status": "Stav (aktívny/nečinný/zakázané)",
               "relative_time_or_idle": "...alebo nečinný stav"
             }
           },

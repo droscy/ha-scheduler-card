@@ -232,7 +232,7 @@
               "time": "Configured time for next action",
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
-              "status": "Статус (активно или неактивно)",
+              "status": "Статус (активно/неактивно/отключено)",
               "relative_time_or_idle": "...или состояние ожидания"
             }
           },

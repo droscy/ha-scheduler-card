@@ -232,7 +232,7 @@
               "time": "Configured time for next action",
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
-              "status": "Stav (aktivní nebo nečinný)",
+              "status": "Stav (aktivní/nečinný/zakázáno)",
               "relative_time_or_idle": "...nebo nečinný stav"
             }
           },

@@ -232,7 +232,7 @@
               "time": "Ingestelde tijd voor de volgende actie",
               "days": "Herhaalde dagen van de week",
               "additional_tasks": "Aantal resterende acties",
-              "status": "Status (actief of inactief)",
+              "status": "Status (actief/inactief/uitgeschakeld)",
               "relative_time_or_idle": "...of inactieve status"
             }
           },

@@ -232,7 +232,7 @@
               "time": "Konfigurētais laiks nākamajai darbībai",
               "days": "Atkārtotas nedēļas dienas",
               "additional_tasks": "Papildu uzdevumu skaits",
-              "status": "Statuss (aktīvs vai dīkstāvē)",
+              "status": "Statuss (aktīvs/dīkstāvē/atspējots)",
               "relative_time_or_idle": "...vai dīkstāves stāvoklis"
             }
           },

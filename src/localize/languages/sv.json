@@ -232,7 +232,7 @@
               "time": "Konfigurerad tid för nästa åtgärd",
               "days": "Upprepade dagar i veckan",
               "additional_tasks": "Antal ytterligare uppgifter",
-              "status": "Status (aktiv eller inaktiv)",
+              "status": "Status (aktiv/inaktiv/inaktiverad)",
               "relative_time_or_idle": "...eller inaktivt tillstånd"
             }
           },

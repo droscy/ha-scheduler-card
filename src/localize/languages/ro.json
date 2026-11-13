@@ -232,7 +232,7 @@
               "time": "Configured time for next action",
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
-              "status": "Stare (activ sau inactiv)",
+              "status": "Stare (activ/inactiv/dezactivat)",
               "relative_time_or_idle": "...sau stare inactivă"
             }
           },

@@ -232,7 +232,7 @@
               "time": "下次执行的设定时间",
               "days": "重复周期（星期）",
               "additional_tasks": "额外任务数量",
-              "status": "状态(活动或空闲)",
+              "status": "状态(活动/空闲/已禁用)",
               "relative_time_or_idle": "...或空闲状态"
             }
           },

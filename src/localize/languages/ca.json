@@ -232,7 +232,7 @@
               "time": "Hora configurada per a la següent acció",
               "days": "Dies repetits de la setmana",
               "additional_tasks": "Nombre de tasques addicionals",
-              "status": "Estat (actiu o inactiu)",
+              "status": "Estat (actiu/inactiu/desactivat)",
               "relative_time_or_idle": "...o estat inactiu"
             }
           },

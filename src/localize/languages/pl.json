@@ -232,7 +232,7 @@
               "time": "Skonfigurowany czas następnej akcji",
               "days": "Powtarzane dni tygodnia",
               "additional_tasks": "Liczba dodatkowych zadań",
-              "status": "Status (aktywny lub bezczynny)",
+              "status": "Status (aktywny/bezczynny/wyłączony)",
               "relative_time_or_idle": "...lub stan bezczynności"
             }
           },

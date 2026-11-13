@@ -232,7 +232,7 @@
               "time": "Configured time for next action",
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
-              "status": "Status (aktiv oder inaktiv)",
+              "status": "Status (aktiv/inaktiv/deaktiviert)",
               "relative_time_or_idle": "...oder Ruhezustand"
             }
           },

@@ -232,7 +232,7 @@
               "time": "Configured time for next action",
               "days": "Repeated days of the week",
               "additional_tasks": "Number of additional tasks",
-              "status": "Status (active or idle)",
+              "status": "Status (active/idle/disabled)",
               "relative_time_or_idle": "...or idle status"
             }
           },
